@@ -84,7 +84,7 @@ class Payme extends BaseGateway
                 'Invalid amount for this object.'
             );
         }
-        $active_transactions = $this->getModelTransactions($model, true);
+        $active_transactions = $this->getModelTransactions($model, false);
         \Log::info([
             'active transactions' => count($active_transactions),
             'multi' => config('payuz')['multi_transaction']
