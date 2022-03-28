@@ -68,6 +68,7 @@ class Transaction extends Model
     }
     public function isExpired()
     {
-        return $this->state == self::STATE_CREATED && DataFormat::datetime2timestamp($this->updated_time) - time() > self::TIMEOUT;
+        return false;
+        //return $this->state == self::STATE_CREATED && DataFormat::datetime2timestamp($this->updated_time) - time() > self::TIMEOUT;
     }
 }
